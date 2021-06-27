@@ -85,6 +85,7 @@ public class FileService {
                     element.put("size", Files.size(file));
                     element.put("lastModifiedTime", Files.getLastModifiedTime(file).toString().split("\\.")[0].replace("T", " "));
                     element.put("type", Files.isDirectory(file) ? "Directory" : "File");
+                    element.put("parent", rootPath.toString());
                     elementList.add(element);
                     if (Files.isRegularFile(file)) {
                         total_file.updateAndGet(v -> v + 1);

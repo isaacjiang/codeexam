@@ -23,7 +23,6 @@ public class WebService {
 
     public Mono<ServerResponse> getFileList(ServerRequest request) {
         Optional<String> rootFolder = request.queryParam("root");
-        System.out.println(rootFolder);
 
         JSONObject output = fileService.getFoldersAndFilesList(rootFolder.get());
 
